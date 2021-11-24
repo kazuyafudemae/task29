@@ -10,11 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::get('/', 'ItemController@index')->name('item.index');
 
+Route::get('/detail', 'ItemController@detail')->name('item.detail');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 use App\Item;
+/*
+Route::get('/', 'ItemController@index')->name('item.index');

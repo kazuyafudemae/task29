@@ -20,4 +20,6 @@ class Item extends Model
 		'updated_at',
 		'deleted_at'
 	];
+
+	protected $table = 'items';
 }
