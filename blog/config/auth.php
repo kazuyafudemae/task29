@@ -41,16 +41,22 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+	'guards' => [
+		'web' => [
+			'driver' => 'session',
+			'provider' => 'users',
+		],
 
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-        ],
+		'api' => [
+			'driver' => 'token',
+			'provider' => 'users',
+		],
+
+		'user' => [
+			'driver' => 'session',
+			'provider' => 'users',
+		],
+
 		'admin' => [ //追加
 			'driver' => 'session', //追加
 			'provider' => 'admins', //追加
