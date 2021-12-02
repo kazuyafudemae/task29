@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
+use App\Http\Controllers\Admin\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -40,7 +41,7 @@ class LoginController extends Controller
 
 	public function showLoginForm()
 	{
-		return view('admin.auth.login');
+		return view('Admin.auth.login');
 	}
 
 	protected function guard()
@@ -52,6 +53,6 @@ class LoginController extends Controller
 	{
 		$this->guard('admin')->logout();
 		// $request->session()->invalidate(); これが全部のSessionを消してしまう
-		return redirect('/');
+		return redirect('/admin/home');
 	}
 }

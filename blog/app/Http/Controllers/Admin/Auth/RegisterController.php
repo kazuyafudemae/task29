@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Admin\Auth;
 
-use App\User;
 use App\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -46,6 +45,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+	public function showRegisterForm()
+	{
+		return view('Admin.auth.register');
+	}
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
