@@ -52,7 +52,7 @@ class LoginController extends Controller
 	public function logout(Request $request)
 	{
 		$this->guard('admin')->logout();
-		// $request->session()->invalidate(); これが全部のSessionを消してしまう
 		return redirect('/admin/home');
+		// $request->session()->invalidate(); これが全部のSessionを消してしまう
 	}
 }
