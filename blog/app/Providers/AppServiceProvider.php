@@ -15,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 		Schema::defaultStringLength(191);
+		// 管理画面用のクッキー
+		if (request()->is('admin*')) {
+			config(['session.cookie' => config('session.cookie_admin')]);
+		}
     }
 
     /**
